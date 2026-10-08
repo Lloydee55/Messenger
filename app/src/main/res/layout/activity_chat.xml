@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/pale_blue"
+    tools:context=".ChatActivity">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/messageRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:paddingTop="80dp"
+        android:paddingBottom="80dp"
+
+        android:clipToPadding="false"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:listitem="@layout/my_message_item" />
+
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="12dp"
+        android:background="@drawable/other_user_neme_info"
+        android:padding="16dp"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+
+        android:elevation="8dp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Polina Pipiska" />
+
+    <View
+        android:id="@+id/onlineStatus"
+        android:layout_width="12dp"
+        android:layout_height="12dp"
+        android:layout_margin="16dp"
+        android:elevation="9dp"
+        app:layout_constraintBottom_toBottomOf="@+id/titleTextView"
+        app:layout_constraintEnd_toEndOf="@+id/titleTextView"
+        app:layout_constraintTop_toTopOf="@+id/titleTextView"
+        tools:background="@drawable/circle_red"/>
+
+    <EditText
+        android:id="@+id/messageEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/input_field_radius"
+        android:hint="Enter message"
+        android:inputType="textMultiLine"
+        android:padding="12dp"
+        android:paddingEnd="45dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/blue"
+
+        android:elevation="8dp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <ImageView
+        android:id="@+id/sendMessageImageView"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:elevation="9dp"
+        android:padding="12dp"
+        app:layout_constraintBottom_toBottomOf="@id/messageEditText"
+        app:layout_constraintEnd_toEndOf="@+id/messageEditText"
+        app:layout_constraintTop_toTopOf="@id/messageEditText"
+        app:srcCompat="@android:drawable/ic_menu_send"
+        app:tint="@color/royal_blue" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
